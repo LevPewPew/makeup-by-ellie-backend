@@ -10,10 +10,10 @@ const index = async (req, res) => {
   }
 }
 
-// TODO this is just a clone of index action for now
 const filteredIndex = async (req, res) => {
+  const { category } = req.params;
   try {
-    const works = await Work.find();
+    const works = await Work.find({category});
     res.send(works);
   } catch (err) {
     res.status(404).send(err);
@@ -25,7 +25,7 @@ const create = async (req, res) => {
     category,
     image
   } = req.body;
-  
+
   try {
     const newWork = await Work.create({ category, image });
     res.send(newWork);
