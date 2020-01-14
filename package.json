@@ -1,7 +1,7 @@
 {
-  "name": "sushi-backend",
+  "name": "makeup-by-ellie-backend",
   "version": "1.0.0",
-  "description": "sushi app backend in express, connecting to MongoDB Atlas",
+  "description": "makeup-by-ellie app backend in express, connecting to MongoDB Atlas",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
