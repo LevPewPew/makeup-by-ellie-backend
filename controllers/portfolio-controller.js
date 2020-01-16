@@ -23,11 +23,11 @@ const filteredIndex = async (req, res) => {
 const create = async (req, res) => {
   const {
     category,
-    image
+    imageUrl
   } = req.body;
 
   try {
-    const newWork = await Work.create({ category, image });
+    const newWork = await Work.create({ category, imageUrl });
     res.send(newWork);
   } catch (err) {
     res.status(400).send(err);
