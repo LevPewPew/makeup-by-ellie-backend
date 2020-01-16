@@ -7,6 +7,6 @@ const index = (req, res) => {
 
 router.get('/', index);
 
-router.use('/categories', require('./categories-routes'));
+router.use('/portfolio', require('./portfolio-routes'));
 
 module.exports = router;

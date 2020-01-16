@@ -6,7 +6,7 @@ require('dotenv').config();
 
 const app = express();
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5005;
 const DB_URL = process.env.DB_URL;
 const dbConfig = { useNewUrlParser: true, useUnifiedTopology: true };
 const whitelist = ['http://localhost:3000', 'https://makeup-by-ellie.netlify.com'];
