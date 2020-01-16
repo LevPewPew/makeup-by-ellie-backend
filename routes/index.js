@@ -9,4 +9,6 @@ router.get('/', index);
 
 router.use('/portfolio', require('./portfolio-routes'));
 
+router.use('/services', require('./service-routes'));
+
 module.exports = router;
