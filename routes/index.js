@@ -13,4 +13,6 @@ router.use('/services', require('./service-routes'));
 
 router.use('/contact', require('./contact-routes'));
 
+router.use('/FAQ', require('./question-routes'));
+
 module.exports = router;
