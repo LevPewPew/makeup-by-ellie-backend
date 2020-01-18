@@ -20,7 +20,7 @@ const create = async (req, res) => {
   } = req.body;
 
   try {
-    const newQuestion = await Service.create({ question, answer });
+    const newQuestion = await Question.create({ question, answer });
     res.send(newQuestion);
   } catch (err) {
     res.status(400).send(err);
