@@ -11,4 +11,6 @@ router.use('/portfolio', require('./portfolio-routes'));
 
 router.use('/services', require('./service-routes'));
 
+router.use('/contact', require('./contact-routes'));
+
 module.exports = router;
