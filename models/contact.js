@@ -8,32 +8,47 @@ const contactSchema = new Schema(
       type: String,
       required: true
     },
-    gender:
+    mobile:
     {
-      type: String,
+      type: Number,
       required: true
     },
-    phone:
-    {
-      type: String,
-      required: true
-    },
-    address:
-    {
-      type: String,
-      required: true
-    },
-    bookingDate:
+    eventDate:
     {
       type: Date,
       required: true
     },
-    readyByTime:
+    serviceType:
     {
       type: String,
       required: true
     },
-    category:
+    totalPeopleJustMakeup:
+    {
+      type: Number,
+      required: true
+    },
+    totalPeopleWithHair:
+    {
+      type: Number,
+      required: true
+    },
+    timeToFinish:
+    {
+      type: Date,
+      required: true
+    },
+    applicationAddress:
+    {
+      type: String,
+      required: true
+    },
+    howDidYouHear:
+    {
+      type: String,
+      required: true
+    },
+    addedQuestionsOrInfo:
     {
       type: String,
       required: true
