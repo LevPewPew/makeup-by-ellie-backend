@@ -17,16 +17,29 @@ const index = async (req, res) => {
 const create = async (req, res) => {
   const {
     name,
-    gender,
-    phone,
-    address,
-    bookingDate,
-    readyByTime,
-    category
+    mobile,
+    eventDate,
+    serviceType,
+    totalPeopleJustMakeup,
+    totalPeopleWithHair,
+    timeToFinish,
+    applicationAddress,
+    howDidYouHear,
+    addedQuestionsOrInfo
   } = req.body;
 
   try {
-    const newContact = await Service.create({ name, gender, phone, address, bookingDate, readyByTime, category });
+    const newContact = await Service.create({ 
+      name,
+      mobile,
+      eventDate,
+      serviceType,
+      totalPeopleJustMakeup,
+      totalPeopleWithHair,
+      timeToFinish,
+      applicationAddress,
+      howDidYouHear,
+      addedQuestionsOrInfo });
     res.send(newContact);
   } catch (err) {
     res.status(400).send(err);
