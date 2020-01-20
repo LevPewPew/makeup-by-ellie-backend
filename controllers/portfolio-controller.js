@@ -34,8 +34,32 @@ const create = async (req, res) => {
   }
 }
 
+const edit = async (req, res) => {
+  const {id} = req.params;
+
+  try {
+    const editWork = await Work.findOneAndUpdate({_id: id},{$set: {...res.body}});
+    res.send(editWork);
+  } catch (err) {
+    res.status(400).send(err);
+  }
+}
+
+const remove = async (req, res) => {
+  const {id} = req.params;
+
+  try {
+    const removeWork = await Work.findOneAndDelete({_id: id});
+    res.send(removeWork);
+  } catch (err) {
+    res.status(400).send(err);
+  }
+}
+
 module.exports = {
   index,
   filteredIndex,
-  create
+  create,
+  edit,
+  remove
 }
