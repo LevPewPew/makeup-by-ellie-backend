@@ -15,4 +15,6 @@ router.use('/contact', require('./contact-routes'));
 
 router.use('/FAQ', require('./question-routes'));
 
+router.use('/aws-s3', require('./aws-s3-routes'));
+
 module.exports = router;
