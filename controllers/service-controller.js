@@ -31,8 +31,8 @@ const edit = async (req, res) => {
   const {id} = req.params;
 
   try {
-    const editService = await Service.findOneAndUpdate({_id: id},{$set: {...res.body}});
-    res.send(editService);
+    const editService = await Service.findOneAndUpdate({_id: id},{$set: {...req.body}});
+    res.send("Updated the record");
   } catch (err) {
     res.status(400).send(err);
   }
