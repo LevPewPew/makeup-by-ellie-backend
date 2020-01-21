@@ -10,7 +10,7 @@ const contactSchema = new Schema(
     },
     mobile:
     {
-      type: Number,
+      type: String,
       required: true
     },
     eventDate:
@@ -40,8 +40,7 @@ const contactSchema = new Schema(
     },
     applicationAddress:
     {
-      type: String,
-      required: true
+      type: String
     },
     howDidYouHear:
     {

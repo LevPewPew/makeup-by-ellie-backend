@@ -13,6 +13,17 @@ const index = async (req, res) => {
   }
 }
 
+const getContact = async (req, res) => {
+  try {
+
+    const contact = await Contact.find({_id:req.params.id});
+    res.send(contact);
+  } catch (err) {
+    console.log(err);
+    res.status(404).send(err);
+  }
+}
+
 
 const create = async (req, res) => {
   const {
@@ -29,7 +40,7 @@ const create = async (req, res) => {
   } = req.body;
 
   try {
-    const newContact = await Service.create({ 
+    const newContact = await Contact.create({ 
       name,
       mobile,
       eventDate,
@@ -40,7 +51,7 @@ const create = async (req, res) => {
       applicationAddress,
       howDidYouHear,
       addedQuestionsOrInfo });
-    res.send(newContact);
+    res.send(`Thank you, ${name} for your inquiry. I will get back to you asap.`);
   } catch (err) {
     res.status(400).send(err);
   }
@@ -48,5 +59,6 @@ const create = async (req, res) => {
 
 module.exports = {
   index,
-  create
+  create,
+  getContact
 }
