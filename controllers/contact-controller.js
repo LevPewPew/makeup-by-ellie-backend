@@ -69,7 +69,7 @@ const create = async (req, res) => {
   
   transporter.sendMail({
       from: `${name} <${email}>`, // sender address
-      to: "peter.pawar2@gmail.com", // list of receivers
+      to: "levthedev@protonmail.com", // list of receivers
       subject: "You have a new enquiry", // Subject line
       html: `<h1>You have a new inquiry</h1><h2>Name:${name}</h2><h2>Contact:${mobile}</h2> ` // html body
     },function (err, info) {
