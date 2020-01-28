@@ -27,7 +27,19 @@ const create = async (req, res) => {
   }
 }
 
+const remove = async (req, res) => {
+  const {id} = req.params;
+
+  try {
+    const removeQuestion = await Question.findOneAndDelete({_id: id});
+    res.send(removeQuestion);
+  } catch (err) {
+    res.status(400).send(err);
+  }
+}
+
 module.exports = {
   index,
-  create
+  create,
+  remove
 }
