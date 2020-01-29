@@ -13,7 +13,8 @@ router.use('/services', require('./service-routes'));
 
 router.use('/contact', require('./contact-routes'));
 
-router.use('/faq', require('./question-routes'));
+router.use('/FAQ', require('./question-routes'));
+router.use('/questions', require('./question-routes'));
 
 router.use('/aws-s3', require('./aws-s3-routes'));
 
