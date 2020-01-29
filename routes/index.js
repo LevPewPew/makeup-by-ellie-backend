@@ -17,4 +17,6 @@ router.use('/FAQ', require('./question-routes'));
 
 router.use('/aws-s3', require('./aws-s3-routes'));
 
+router.use('/admin-login', require('./admin-routes'));
+
 module.exports = router;
