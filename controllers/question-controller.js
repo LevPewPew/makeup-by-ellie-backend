@@ -27,6 +27,17 @@ const create = async (req, res) => {
   }
 }
 
+const edit = async (req, res) => {
+  const {id} = req.params;
+
+  try {
+    const editQuestion = await Question.findOneAndUpdate({_id: id},{$set: {...req.body}});
+    res.send("Updated the record");
+  } catch (err) {
+    res.status(400).send(err);
+  }
+}
+
 const remove = async (req, res) => {
   const {id} = req.params;
 
@@ -41,5 +52,6 @@ const remove = async (req, res) => {
 module.exports = {
   index,
   create,
+  edit,
   remove
 }
