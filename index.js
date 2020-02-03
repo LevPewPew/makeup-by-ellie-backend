@@ -19,7 +19,9 @@ const dbConfig = { useNewUrlParser: true, useUnifiedTopology: true };
 //     }
 //   }
 // };
-corsOptions = 'https://makeupbyellie.netlify.com';
+corsOptions = {
+  origin: 'https://makeupbyellie.netlify.com'
+};
 
 mongoose.connect(DB_URL, dbConfig, (err) => {
   if(err) {
