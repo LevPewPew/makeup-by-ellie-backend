@@ -9,16 +9,17 @@ const app = express();
 const PORT = process.env.PORT || 5005;
 const DB_URL = process.env.DB_URL;
 const dbConfig = { useNewUrlParser: true, useUnifiedTopology: true };
-const whitelist = ['http://localhost:3000', 'https://makeupbyellie.netlify.com'];
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  }
-};
+// const whitelist = ['http://localhost:3000', 'https://makeupbyellie.netlify.com'];
+// const corsOptions = {
+//   origin: function (origin, callback) {
+//     if (whitelist.indexOf(origin) !== -1) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error('Not allowed by CORS'));
+//     }
+//   }
+// };
+corsOptions = 'https://makeupbyellie.netlify.com';
 
 mongoose.connect(DB_URL, dbConfig, (err) => {
   if(err) {
@@ -30,7 +31,7 @@ mongoose.connect(DB_URL, dbConfig, (err) => {
 
 app.use(morgan('dev'));
 app.use(express.json());
-app.use(cors({corsOptions}));
+app.use(cors(corsOptions));
 app.use(require('./routes/index'));
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
