@@ -40,7 +40,7 @@ const contactSchema = new Schema(
     },
     timeToFinish:
     {
-      type: Date,
+      type: String,
       required: true
     },
     applicationAddress:
@@ -55,7 +55,7 @@ const contactSchema = new Schema(
     addedQuestionsOrInfo:
     {
       type: String,
-      required: true
+      required: false
     }
   },{timestamps:true}
 );
