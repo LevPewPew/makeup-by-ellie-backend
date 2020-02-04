@@ -16,11 +16,14 @@ const create = async (req, res) => {
   const {
     title,
     description,
-    imageUrl
+    imageUrl,
+    cost,
+    duration,
+    disclaimer
   } = req.body;
 
   try {
-    const newService = await Service.create({ title, description, imageUrl });
+    const newService = await Service.create({ title, description, imageUrl, cost, duration, disclaimer });
     res.send(newService);
   } catch (err) {
     res.status(400).send(err);
