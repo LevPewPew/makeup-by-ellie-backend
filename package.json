@@ -4,9 +4,13 @@
   "description": "makeup-by-ellie app backend in express, connecting to MongoDB Atlas",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --detectOpenHandles",
+    "test:watch": "jest --watch",
     "start": "node index.js",
     "dev": "nodemon index.js"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "author": "Levente Toth",
   "license": "ISC",
@@ -21,6 +25,8 @@
     "nodemailer": "^6.4.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "jest": "^25.1.0",
+    "nodemon": "^2.0.2",
+    "supertest": "^4.0.2"
   }
 }

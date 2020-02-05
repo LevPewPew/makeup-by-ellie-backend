@@ -21,8 +21,9 @@ const index = async (req, res) => {
     }
     else
     {
-      res.sendStatus(403).json(
+      res.json(
       {
+        status: 403,
         success: false,
         message: 'Incorrect username or password'
       } );
@@ -30,8 +31,9 @@ const index = async (req, res) => {
   }
   else
   {
-    res.sendStatus(400).json(
+    res.json(
     {
+      status: 400,
       success: false,
       message: 'Authentication failed! Please check the request'
     } );

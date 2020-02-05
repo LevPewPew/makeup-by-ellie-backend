@@ -71,12 +71,23 @@ const create = async (req, res) => {
       from: `${name} <${email}>`, // sender address
       to: "levthedev@protonmail.com", // list of receivers
       subject: "You have a new enquiry", // Subject line
-      html: `<h1>You have a new inquiry</h1><h2>Name:${name}</h2><h2>Contact:${mobile}</h2> ` // html body
+      html: `<h1>You have a new inquiry</h1>
+      <h2>Name:${name}</h2>
+      <h2>Contact:${mobile}</h2>
+      <h2>Email:${email}</h2>
+      <h2>Event Date:${eventDate}</h2>
+      <h2>Type of Service:${serviceType}</h2>
+      <h2>Number of People for Makeup:${totalPeopleJustMakeup}</h2>
+      <h2>Number of People for Hair:${totalPeopleWithHair}</h2>
+      <h2>Time to be Ready By:${timeToFinish}</h2>
+      <h2>Address:${applicationAddress}</h2>
+      <h2>How did you hear about us:${howDidYouHear}</h2>
+      <h2>Additional Questions:${addedQuestionsOrInfo}</h2>` // html body
     },function (err, info) {
       if(err)
         console.log(err)
-      else
-        console.log(info);
+      // else
+      //   console.log(info);
    });
   } catch (err) {
     res.status(400).send(err);
