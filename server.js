@@ -6,7 +6,7 @@ require('dotenv').config();
 
 const app = express();
 
-const DB_URL = process.env.NODE_ENV === "test"? process.env.DB_TEST_URL : process.env.DB_URL;
+const DB_URL = process.env.DB_URL;
 const dbConfig = { useNewUrlParser: true, useUnifiedTopology: true };
 const whitelist = ['http://localhost:3000', 'https://makeupbyellie.netlify.com'];
 const corsOptions = {
