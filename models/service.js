@@ -17,6 +17,18 @@ const serviceSchema = new Schema(
     {
       type: String,
       required: true
+    },
+    cost: 
+    {
+      type: String
+    },
+    duration:
+    {
+      type: String
+    },
+    disclaimer:
+    {
+      type: String
     }
   }
 );
