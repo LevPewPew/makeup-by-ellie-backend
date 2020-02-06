@@ -55,8 +55,8 @@ it("Should check for a particular category", async done =>
 describe('Tests for admin-login route',() => {
   it("Check for correct admin login - Should return 200 OK response", async done => {
   const response = await request.post("/admin-login").send({
-    username: "admin",
-    password: "test"
+    username: process.env.ADMIN_LOGIN,
+    password: process.env.ADMIN_PASSWORD
   });
   expect(response.status).toBe(200);
   done();
