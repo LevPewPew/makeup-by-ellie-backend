@@ -8,7 +8,7 @@ const app = express();
 
 const DB_URL = process.env.DB_URL;
 const dbConfig = { useNewUrlParser: true, useUnifiedTopology: true };
-const whitelist = ['http://localhost:3000', 'https://makeupbyellie.netlify.com', 'https://makeupbyellie.netlify.app'];
+const whitelist = ['http://localhost:3000', 'http://localhost:3001', 'https://makeupbyellie.netlify.com', 'https://makeupbyellie.netlify.app'];
 const corsOptions = {
   origin: function (origin, callback) {
     if (!origin) { 
