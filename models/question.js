@@ -3,13 +3,11 @@ const Schema = mongoose.Schema;
 
 const questionSchema = new Schema(
   {
-    question: 
-    {
+    question: {
       type: String,
       required: true
     },
-    answer:
-    {
+    answer: {
       type: String,
       required: true
     }
