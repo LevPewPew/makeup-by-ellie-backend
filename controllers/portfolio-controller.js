@@ -1,4 +1,7 @@
 const Work = require('../models/work');
+const url = require('url');
+const https = require('https');
+const getImgRes = require('image-size');
 
 const index = async (req, res) => {
   try {
@@ -25,6 +28,19 @@ const create = async (req, res) => {
     category,
     imageUrl
   } = req.body;
+
+  const options = url.parse(imageUrl);
+  https.get(options, function (response) {
+    var chunks = [];
+    response.on('data', function (chunk) {
+      chunks.push(chunk);
+    }).on('end', function() {
+      const buffer = Buffer.concat(chunks);
+      const imgRes = getImgRes(buffer);
+      console.log('imgres width: ', imgRes.width);
+      console.log('imgres height: ', imgRes.height);
+    });
+  });
 
   try {
     const newWork = await Work.create({ category, imageUrl });
