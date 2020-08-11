@@ -15,7 +15,6 @@ const index = async (req, res) => {
 
 const getContact = async (req, res) => {
   try {
-
     const contact = await Contact.find({_id:req.params.id});
     res.send(contact);
   } catch (err) {
@@ -23,7 +22,6 @@ const getContact = async (req, res) => {
     res.status(404).send(err);
   }
 }
-
 
 const create = async (req, res) => {
   const {
@@ -40,10 +38,8 @@ const create = async (req, res) => {
     addedQuestionsOrInfo
   } = req.body;
 
-  
-
   try {
-    const newContact = await Contact.create({ 
+    await Contact.create({ 
       name,
       mobile,
       email,
@@ -54,23 +50,24 @@ const create = async (req, res) => {
       timeToFinish,
       applicationAddress,
       howDidYouHear,
-      addedQuestionsOrInfo });
+      addedQuestionsOrInfo
+    });
     res.send(`Thank you, ${name} for your inquiry. I will get back to you asap.`);
 
-  let transporter = nodemailer.createTransport({
+    let transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
-        port: 465,
-        secure: true,
-        auth: {
-          user: process.env.GMAIL_USER, //Add this to .env file - You need valid credentials to be able to send emails
-          pass: process.env.GMAIL_PASS 
-        }
-  });
+      port: 465,
+      secure: true,
+      auth: {
+        user: process.env.GMAIL_USER, //Add this to .env file - You need valid credentials to be able to send emails
+        pass: process.env.GMAIL_PASS 
+      }
+    });
   
-  transporter.sendMail({
-      from: `${name} <${email}>`, // sender address
-      to: "levthedev@protonmail.com", // list of receivers
-      subject: "You have a new enquiry", // Subject line
+    transporter.sendMail({
+      from: `${name} <${email}>`,
+      to: "elleni.tseriotis@gmail.com",
+      subject: "Makeup by Ellie: New Inquiry",
       html: `<h1>You have a new inquiry</h1>
       <h2>Name: ${name}</h2>
       <h2>Contact: ${mobile}</h2>
@@ -82,12 +79,11 @@ const create = async (req, res) => {
       <h2>Time to be Ready By: ${timeToFinish}</h2>
       <h2>Address: ${applicationAddress}</h2>
       <h2>How did you hear about us: ${howDidYouHear}</h2>
-      <h2>Additional Questions: ${addedQuestionsOrInfo}</h2>` // html body
-    },function (err, info) {
-      if(err)
-        console.log(err)
-      // else
-      //   console.log(info);
+      <h2>Additional Questions: ${addedQuestionsOrInfo}</h2>`
+    }, (err) => {
+      if(err) {
+        console.log(err);
+      }
    });
   } catch (err) {
     res.status(400).send(err);
@@ -98,4 +94,4 @@ module.exports = {
   index,
   create,
   getContact
-}
+};
