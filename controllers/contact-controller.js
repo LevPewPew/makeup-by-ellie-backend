@@ -29,7 +29,7 @@ function getMessage() {
   const body = "This is a test email using SendGrid from Node.js";
   return {
     to: "info@makeupbyellie.com",
-    from: "levtoth1988@gmail.com",
+    from: "info@makeupbyellie.com",
     subject: "Test email with Node.js and SendGrid",
     text: body,
     html: `<strong>${body}</strong>`,
