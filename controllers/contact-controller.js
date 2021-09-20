@@ -29,7 +29,7 @@ function getMessage() {
   const body = "This is a test email using SendGrid from Node.js";
   return {
     to: "info@makeupbyellie.com",
-    from: "info@makeupbyellie.com",
+    from: "levtoth1988@gmail.com",
     subject: "Test email with Node.js and SendGrid",
     text: body,
     html: `<strong>${body}</strong>`,
@@ -80,9 +80,9 @@ const create = async (req, res) => {
     //   howDidYouHear,
     //   addedQuestionsOrInfo,
     // });
-    res.send(
-      `Thank you, ${name} for your inquiry. I will get back to you asap.`
-    );
+    // res.send(
+    //   `Thank you, ${name} for your inquiry. I will get back to you asap.`
+    // );
 
     // let transporter = nodemailer.createTransport({
     //   host: "smtp.gmail.com",
