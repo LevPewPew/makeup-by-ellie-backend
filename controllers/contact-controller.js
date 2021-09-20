@@ -28,7 +28,7 @@ const getContact = async (req, res) => {
 function getMessage() {
   const body = "This is a test email using SendGrid from Node.js";
   return {
-    to: "info@makeupbyellie.com",
+    to: process.env.FOOBAR,
     from: "info@makeupbyellie.com",
     subject: "Test email with Node.js and SendGrid",
     text: body,
