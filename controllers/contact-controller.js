@@ -80,9 +80,7 @@ const create = async (req, res) => {
     //   howDidYouHear,
     //   addedQuestionsOrInfo,
     // });
-    // res.send(
-    //   `Thank you, ${name} for your inquiry. I will get back to you asap.`
-    // );
+    res.send(`Thank you for your message. I will get back to you ASAP.`);
 
     // let transporter = nodemailer.createTransport({
     //   host: "smtp.gmail.com",
