@@ -53,8 +53,12 @@ const create = async (req, res) => {
     <h2>Address: <span style="font-weight:normal">${
       applicationAddress ?? "Ellie's Studio"
     }</span></h2>
-    <h2>How did you hear about us: <span style="font-weight:normal">${howDidYouHear}</span></h2>
-    <h2>Additional Questions: <span style="font-weight:normal">${addedQuestionsOrInfo}</span></h2>`,
+    <h2>How did you hear about us: <span style="font-weight:normal">${
+      howDidYouHear ?? "-"
+    }</span></h2>
+    <h2>Additional Questions: <span style="font-weight:normal">${
+      addedQuestionsOrInfo ?? "-"
+    }</span></h2>`,
   };
 
   try {
