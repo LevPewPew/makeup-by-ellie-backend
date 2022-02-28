@@ -3,61 +3,51 @@ const Schema = mongoose.Schema;
 
 const contactSchema = new Schema(
   {
-    name: 
-    {
+    name: {
       type: String,
-      required: true
+      required: true,
     },
-    mobile:
-    {
+    mobile: {
       type: String,
-      required: true
+      required: true,
     },
-    email:
-    {
+    email: {
       type: String,
-      required: true
+      required: true,
     },
-    eventDate:
-    {
+    eventDate: {
       type: Date,
-      required: true
+      required: true,
     },
-    serviceType:
-    {
+    serviceType: {
       type: String,
-      required: true
+      required: true,
     },
-    totalPeopleJustMakeup:
-    {
+    totalPeopleMakeup: {
       type: Number,
-      required: true
+      required: true,
     },
-    totalPeopleWithHair:
-    {
+    totalPeopleHair: {
       type: Number,
-      required: true
+      required: true,
     },
-    timeToFinish:
-    {
+    timeToFinish: {
       type: String,
-      required: true
+      required: true,
     },
-    applicationAddress:
-    {
-      type: String
-    },
-    howDidYouHear:
-    {
+    applicationAddress: {
       type: String,
-      required: true
     },
-    addedQuestionsOrInfo:
-    {
+    howDidYouHear: {
       type: String,
-      required: false
-    }
-  },{timestamps:true}
+      required: true,
+    },
+    addedQuestionsOrInfo: {
+      type: String,
+      required: false,
+    },
+  },
+  { timestamps: true },
 );
 
 const Contact = mongoose.model('contact', contactSchema);

@@ -1,5 +1,5 @@
-const Contact = require("../models/contact");
-const sendGridMail = require("@sendgrid/mail");
+const Contact = require('../models/contact');
+const sendGridMail = require('@sendgrid/mail');
 sendGridMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 const index = async (req, res) => {
@@ -29,8 +29,8 @@ const create = async (req, res) => {
     email,
     eventDate,
     serviceType,
-    totalPeopleJustMakeup,
-    totalPeopleWithHair,
+    totalPeopleMakeup,
+    totalPeopleHair,
     timeToFinish,
     applicationAddress,
     howDidYouHear,
@@ -39,25 +39,25 @@ const create = async (req, res) => {
 
   const message = {
     to: process.env.CONTACT_DESTINATION,
-    from: "info@makeupbyellie.com",
-    subject: "MBE Contact Form Enquiry",
+    from: 'info@makeupbyellie.com',
+    subject: 'MBE Contact Form Enquiry',
     html: `<h1>You have a new inquiry</h1>
     <h2>Name: <span style="font-weight:normal">${name}</span></h2>
     <h2>Contact: <span style="font-weight:normal">${mobile}</span></h2>
     <h2>Email: <span style="font-weight:normal">${email}</span></h2>
     <h2>Event Date: <span style="font-weight:normal">${eventDate}</span></h2>
     <h2>Type of Service: <span style="font-weight:normal">${serviceType}</span></h2>
-    <h2>Number of People for Makeup: <span style="font-weight:normal">${totalPeopleJustMakeup}</span></h2>
-    <h2>Number of People for Hair: <span style="font-weight:normal">${totalPeopleWithHair}</span></h2>
+    <h2>Number of People for Makeup: <span style="font-weight:normal">${totalPeopleMakeup}</span></h2>
+    <h2>Number of People for Hair: <span style="font-weight:normal">${totalPeopleHair}</span></h2>
     <h2>Time to be Ready By: <span style="font-weight:normal">${timeToFinish}</span></h2>
     <h2>Address: <span style="font-weight:normal">${
       applicationAddress ?? "Ellie's Studio"
     }</span></h2>
     <h2>How did you hear about us: <span style="font-weight:normal">${
-      howDidYouHear ?? "-"
+      howDidYouHear ?? '-'
     }</span></h2>
     <h2>Additional Questions: <span style="font-weight:normal">${
-      addedQuestionsOrInfo ?? "-"
+      addedQuestionsOrInfo ?? '-'
     }</span></h2>`,
   };
 
@@ -69,8 +69,8 @@ const create = async (req, res) => {
       email,
       eventDate,
       serviceType,
-      totalPeopleJustMakeup,
-      totalPeopleWithHair,
+      totalPeopleMakeup,
+      totalPeopleHair,
       timeToFinish,
       applicationAddress,
       howDidYouHear,
